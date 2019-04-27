@@ -43,7 +43,7 @@ module.exports = (sequelize, DataTypes) => {
       }
     },
     payRate: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.FLOAT,
       allowNull: false,
       validate: { isNumeric: true }
     }
