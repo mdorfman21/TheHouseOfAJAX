@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css?family=Anton|Orbitron"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" type="text/css" href="../css/splash.css" />
+    <title>Q-App</title>
+  </head>
+
+  <body>
+    <nav id="navibar" class="navbar sticky-top navbar-light bg-transparent">
+      <a class="navbar-brand text-success" href="#">
+        <img
+          src="../media/logo.png"
+          width="50"
+          height="50"
+          class="d-inline-block align-center"
+          alt="Logo"
+        />
+        <span>Queue</span>
+      </a>
+      <form class="form-inline">
+        <button class="btn btn btn-light mx-2 my-2 my-sm-0" type="submit">
+          About
+        </button>
+        <button class="btn btn btn-light mx-2 my-2 my-sm-0" type="submit">
+          Register
+        </button>
+        <button class="btn btn btn-light mx-2 my-2 my-sm-0" type="submit">
+          Sign In
+        </button>
+      </form>
+    </nav>
+    <!-- Background Video -->
+    <div id="bkgvid" class="parallax">
+      <video loop muted autoplay playsinline data-object-fit="cover">
+        <source src="../media/linewaiting.mp4" type="video/ogg" />
+      </video>
+    </div>
+
+    <br />
+    <!-- Page Content -->
+    <div class="container" style="height:500px;font-size:36px">
+      <div class="jumbotron">
+        Section1
+      </div>
+    </div>
+    <div class="container" style="height:500px;font-size:36px">
+      <div class="jumbotron">
+        Section 2
+      </div>
+    </div>
+    <div class="container" style="height:500px;font-size:36px">
+      <div class="jumbotron">
+        Section 3
+      </div>
+    </div>
+
+    <Script>
+      window.onscroll = () => { const nav = document.querySelector('#navibar');
+      if (this.scrollY <= 600) nav.className = 'navbar bg-transparent'; else
+      nav.className = 'navbar sticky-top bg-white'; }; if (this.scrollY >= 600)
+      nav.className = 'navbar bg-transparent scroll';
+    </Script>
+  </body>
+</html>
