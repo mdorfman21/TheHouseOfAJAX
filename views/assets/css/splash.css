@@ -1,0 +1,56 @@
+body {
+  background-color: white;
+}
+
+#bkgvid {
+  position: relative;
+  top: -50;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  filter: grayscale(60%) blur(1px);
+}
+
+button:hover {
+  color: white !important;
+}
+
+span {
+  font-family: "Anton", sans-serif;
+}
+span:hover {
+  font-family: "Anton", sans-serif;
+  color: black !important;
+  text-shadow: 2px 2px 4px white;
+}
+
+.btn {
+  font-family: "Anton", sans-serif;
+  border: none;
+  font-size: inherit;
+  color: inherit;
+  background: none;
+  cursor: pointer;
+  /* padding: 25px 80px; */
+  display: inline-block;
+  /* margin: 15px 30px; */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  outline: none;
+  position: relative;
+}
+.btn:hover {
+  font-family: "Anton", sans-serif;
+  color: green !important;
+}
+
+.navbar {
+  position: sticky top;
+  transition: background-color 1s ease-in-out;
+}
+
+nav.scroll {
+  position: sticky top;
+  transition: background-color 1s ease-in-out;
+}
