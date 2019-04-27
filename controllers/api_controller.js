@@ -16,8 +16,15 @@ module.exports = function(app) {
     });
   });
 
-  app.put("/api/user/:username", (req, res) => {
-    let username = req.params.username;
+  app.get("/api/user", (req, res) => {
+    db.User.findAll({}).then(dbUser => {
+      res.json(dbUser);
+    });
+  });
+
+  app.put("/api/user/:id", (req, res) => {
+    let id = req.params.id;
+    let answer = req.body;
     db.User.update(
       {
         firstName: answer.firstName,
@@ -28,7 +35,7 @@ module.exports = function(app) {
       },
       {
         where: {
-          userName: username
+          id: id
         }
       }
     ).then(function(dbUser) {
@@ -36,25 +43,26 @@ module.exports = function(app) {
     });
   });
 
-  app.put("/api/user/:username/waiter", (req, res) => {
-    let username = req.params.username;
+  app.put("/api/user/waiter/:id", (req, res) => {
     db.User.update(
       {
         isWaiter: true
       },
       {
         where: {
-          userName: username
+          id: req.params.id
         }
       }
-    );
+    ).then(dbUser => {
+      console.log(dbUser);
+    });
   });
 
-  app.delete("/api/user/:username", (req, res) => {
-    let username = req.params.username;
+  app.delete("/api/user/:id", (req, res) => {
+    let id = req.params.id;
     db.User.destroy({
       where: {
-        userName: username
+        id
       }
     }).then(function(dbUser) {
       console.log(dbUser);
