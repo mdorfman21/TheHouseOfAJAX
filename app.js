@@ -1,9 +1,10 @@
 let express = require("express");
 let PORT = process.env.PORT || 8080;
 let app = express();
+let bodyParser = require("body-parser");
 
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 let exphbs = require("express-handlebars");
 
