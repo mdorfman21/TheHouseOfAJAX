@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -15,37 +15,86 @@
 <body>
   
 
-<div class="container">
-        <h1>Create the Event</h1> 
-    <form>
-        <div class="form-group">
-          <label for="exampleInputEmail1">User Name</label>
-          <input type="text" class="form-control" id="userName" />
-          <!-- <small id="emailHelp" class="form-text text-muted"></small> -->
+    <div class="container">
+        <div class="col-md-6">
+        
+                <h1>Create the Event</h1> 
+            <form>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">User Name</label>
+                  <input type="text" class="form-control" id="userName" />
+                  <!-- <small id="emailHelp" class="form-text text-muted"></small> -->
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Create the Event</label>
+                  <input type="text" class="form-control" id="name" />
+                  <!-- <small id="emailHelp" class="form-text text-muted"></small> -->
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Location</label>
+                    <input type="text" class="form-control" id="location" />
+                    <!-- <small id="emailHelp" class="form-text text-muted"></small> -->
+                  </div>
+                  <div class="form-group">
+                        <label for="exampleInputEmail1">Date</label>
+                        <input type="text" class="form-control" id="date" />
+                      </div>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Start Time</label>
+                    <input type="text" class="form-control" id="startTime" />
+                  </div>
+                    <div class="form-group">
+                            <label for="exampleInputEmail1">End Time</label>
+                            <input type="text" class="form-control" id="endTime" />
+                    </div>
+                    <div class="form-group">
+                            <label for="exampleInputEmail1">Author</label>
+                            <input type="text" class="form-control" id="author" />
+                          </div>
+                        <div class="form-group">
+                                <label for="exampleInputEmail1">Pay Rate</label>
+                                <input type="text" class="form-control" id="payRate" />
+                              </div>
+                    <!-- <small id="emailHelp" class="form-text text-muted"></small> -->
+            <br>
+                <button class="btn btn-primary" id="createEvent" type="submit">
+                  Queue Me
+                </button>
+              </form>
         </div>
-        <div class="form-group">
-          <label for="exampleInputEmail1">Create the Event</label>
-          <input type="text" class="form-control" id="lastName" />
-          <!-- <small id="emailHelp" class="form-text text-muted"></small> -->
         </div>
-        <div class="form-group">
-            <label for="exampleInputEmail1">Location</label>
-            <input type="text" class="form-control" id="location" />
-            <!-- <small id="emailHelp" class="form-text text-muted"></small> -->
-          </div>
-          <div class="form-group">
-            <label for="exampleInputEmail1">Time</label>
-            <input type="text" class="form-control" id="time" />
-            <!-- <small id="emailHelp" class="form-text text-muted"></small> -->
-    <br>
-        <button class="btn btn-primary" id="createEvent" type="submit">
-          Queue Me
-        </button>
-      </form>
-</div>
-
-
-
-
-</body>
+        <script>
+        $("#createEvent").on("click", function(event) {
+            // Don't refresh the page!
+            event.preventDefault();
+          
+            userName = $("#username")
+              .val();
+            name = $("#name")
+              .val()
+              .trim();
+            location = $("#location")
+              .val()
+              .trim();
+            date = $("#date")
+              .val()
+              .trim();
+              startTime = $("#startTime")
+              .val()
+              .trim();
+              endTime = $("#endTime")
+              .val()
+              .trim();
+              author = $("#author")
+              .val()
+              .trim();
+              payRate = $("#PayRate")
+              .val()
+              .trim();
+             
+            });
+            console.log(userName,name,location,startTime,endTime,author,payRate);
+        
+        </script>
+        </body>
 </html>

@@ -1,79 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <title>Waiter Event</title>
-</head>
-<body>
-    
+  </head>
+  <body>
     <h1>Events</h1>
     <ul>
-        <li>
-           <h2> Book the spot for DMV</h2>
-        </li>
-       
-       <div class="container" >
-           <div class="row">
-               <div class="col-lg-6">
-           <p>payrate- $20<br>
-           location - full address<br>
-           Time -<br>
-           Name-
-        </p>
-           <button type="button" class="btn btn-secondary" id="acceptDMV">Accept</button>
-           <button type="button" class="btn btn-secondary"id="userProfile1">View User Profile</button>
-        </div>
-        </div>
-       </div>
-       
-        <li>
-           <h2> Hold the pass for the concert</h2>
-         </li>
-            
-            <div class="container">
+      <li>
+        <div class="col-lg-6">
+          <h2>Book the spot for DMV</h2>
+
+          <p>
+            payrate- $20<br />
+            location - full address<br />
+            Time -<br />
+            Name-
+          </p>
+          <button type="button" class="btn btn-secondary" id="acceptDMV">
+            Accept
+          </button>
+          <button type="button" class="btn btn-secondary" id="userProfile1">
+            View User Profile
+          </button>
+
+          <li>
+            <h2>Hold the pass for the concert</h2>
+
             <p>
-            payrate- $19<br>
-           location - full address<br>
-           Time -<br>
-           Name-
-        </p>
-           <button type="button" class="btn btn-secondary"id="acceptCON">Accept</button>
-           <button type="button" class="btn btn-secondary" id="userProfile2">View User Profile</button>
-
-
+              payrate- $19<br />
+              location - full address<br />
+              Time -<br />
+              Name-
+            </p>
+            <button type="button" class="btn btn-secondary" id="acceptCON">
+              Accept
+            </button>
+            <button type="button" class="btn btn-secondary" id="userProfile2">
+              View User Profile
+            </button>
+          </li>
         </div>
-
-        
+      </li>
     </ul>
 
-
     <!-- <script type="text" src="./waiterevent.js"></script> -->
-<script>
-$(document).ready( function() {
-    // Don't refresh the page!
-    $("#acceptDMV").click(function(){
-       alert("DMV Accepted"); 
-    });
-    
-    $("#acceptCON").click(function(){
-        alert("CON Accepted");
-    });
-    $("#userProfile1").click(function(){
-        alert("This is the user ONE");
-    });
-    $("#userProfile2").click(function(){
-        alert("This is the user TWO");
-    });
+    <script>
+      $(document).ready(function() {
+        // Don't refresh the page!
+        $("#acceptDMV").click(function() {
+          alert("DMV Accepted");
+        });
 
-});
-</script>
-
-
-
-</body>
+        $("#acceptCON").click(function() {
+          alert("CON Accepted");
+        });
+        $("#userProfile1").click(function() {
+          alert("This is the user ONE");
+        });
+        $("#userProfile2").click(function() {
+          alert("This is the user TWO");
+        });
+      });
+    </script>
+  </body>
 </html>
