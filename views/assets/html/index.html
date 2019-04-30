@@ -25,13 +25,14 @@
       integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
       crossorigin="anonymous"
     />
+
     <link rel="stylesheet" type="text/css" href="../css/splash.css" />
     <title>Q-App</title>
   </head>
 
   <body>
     <nav id="navibar" class="navbar sticky-top navbar-light bg-transparent">
-      <a class="navbar-brand text-success" href="#">
+      <a class="navbar-brand" href="#">
         <img
           src="../media/logo.png"
           width="50"
@@ -41,6 +42,7 @@
         />
         <span>Queue</span>
       </a>
+
       <form class="form-inline">
         <button class="btn btn btn-light mx-2 my-2 my-sm-0" type="submit">
           About
@@ -54,7 +56,7 @@
       </form>
     </nav>
     <!-- Background Video -->
-    <div id="bkgvid" class="parallax">
+    <div class="parallax" id="bkgvid">
       <video loop muted autoplay playsinline data-object-fit="cover">
         <source src="../media/linewaiting.mp4" type="video/ogg" />
       </video>
@@ -62,27 +64,114 @@
 
     <br />
     <!-- Page Content -->
-    <div class="container" style="height:500px;font-size:36px">
-      <div class="jumbotron">
-        Section1
+    <div class="container">
+      <div class="row">
+        <h1>What Is Queue?</h1>
+      </div>
+      <div class="row">
+        <div class="col col-lg-12">
+          <div class="jumbotron">
+            House of Ajax, a group of people who truly value time. We know that
+            we can't make up for lost hours, so we decided to work on an app
+            that allows others to hold your place in line, like the DMV or the
+            queue at your local coffee spot. Skip the lines, avoid the drama,
+            and save time in your life. How much is your time worth?
+          </div>
+        </div>
+      </div>
+
+      <!-- About Services Section -->
+      <div class="row">
+        <h1>Features</h1>
+      </div>
+      <div class="row">
+        <div class="col col-lg-3">
+          <img
+            class="img-fluid img-thumbnail border-white"
+            src="../media/human-resources.png"
+          />
+          <p class="text-center">Have someone wait in line for you</p>
+        </div>
+        <div class="col col-lg-3">
+          <img
+            class="img-fluid img-thumbnail border-white"
+            src="../media/destination.png"
+          />
+          <p class="text-center">Insert Description here</p>
+        </div>
+        <div class="col col-lg-3">
+          <img
+            class="img-fluid img-thumbnail border-white"
+            src="../media/shield.png"
+          />
+          <p class="text-center">Insert Description here</p>
+        </div>
+        <div class="col col-lg-3">
+          <img
+            class="img-fluid img-thumbnail border-white"
+            src="../media/statue-of-liberty.png"
+          />
+          <p class="text-center">Insert Description here</p>
+        </div>
+      </div>
+      <br />
+      <div class="row">
+        <h1>Reviews?</h1>
+      </div>
+      <!-- Reviews -->
+      <div class="row">
+        <div class="col col-lg-12">
+          <div class="jumbotron">
+            <i class="fa fa-star " aria-hidden="true"></i>
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star" aria-hidden="true"></i>
+            <i class="fa fa-star" aria-hidden="true"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="jumbotron">Section</div>
+      </div>
+
+      <div class="mapouter">
+        <div class="gmap_canvas">
+          <iframe
+            width="350"
+            height="350"
+            id="gmap_canvas"
+            src="https://maps.google.com/maps?q=Columbia%20Engineering&t=&z=13&ie=UTF8&iwloc=&output=embed"
+            frameborder="0"
+            scrolling="no"
+            marginheight="0"
+            marginwidth="0"
+          ></iframe
+          ><a href="https://www.emojilib.com"></a>
+        </div>
+        <style>
+          .mapouter {
+            position: relative;
+            text-align: right;
+            height: 350px;
+            width: 350px;
+          }
+
+          .gmap_canvas {
+            overflow: hidden;
+            background: none !important;
+            height: 350px;
+            width: 350px;
+          }
+        </style>
       </div>
     </div>
-    <div class="container" style="height:500px;font-size:36px">
-      <div class="jumbotron">
-        Section 2
-      </div>
-    </div>
-    <div class="container" style="height:500px;font-size:36px">
-      <div class="jumbotron">
-        Section 3
-      </div>
-    </div>
+    <footer class="footer"></footer>
 
     <Script>
       window.onscroll = () => { const nav = document.querySelector('#navibar');
-      if (this.scrollY <= 600) nav.className = 'navbar bg-transparent'; else
-      nav.className = 'navbar sticky-top bg-white'; }; if (this.scrollY >= 600)
-      nav.className = 'navbar bg-transparent scroll';
+      if (this.scrollY <= 450) nav.className = 'navbar sticky-top'; else
+      nav.className = 'navbar sticky-top bg-white'; };
     </Script>
   </body>
 </html>
