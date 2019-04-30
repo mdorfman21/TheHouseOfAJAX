@@ -1,19 +1,45 @@
 let db = require("../models");
-
+const Sequelize = require("sequelize");
 module.exports = function(app) {
   //users routes
   app.post("/api/user", (req, res) => {
     let answer = req.body;
     console.log(req.body);
-    db.User.create({
-      firstName: answer.firstName,
-      lastName: answer.lastName,
-      email: answer.email,
-      userName: answer.userName,
-      password: answer.password
-    }).then(function(dbUser) {
-      console.log(dbUser);
+    db.User.findOrCreate({
+      where: {
+        [Sequelize.Op.or]: [
+          { userName: answer.userName },
+          { email: answer.email }
+        ]
+      },
+      defaults: {
+        firstName: answer.firstName,
+        lastName: answer.lastName,
+        email: answer.email,
+        password: answer.password
+      }
+    }).then(([user, created]) => {
+      console.log(
+        user.get({
+          plain: true
+        })
+      );
+      if (created === false) {
+        res.redirect(409, "/login");
+      }
+      res.redirect(200, "/");
     });
+
+    //need to put this as a result of a promise
+    // db.User.create({
+    //   firstName: answer.firstName,
+    //   lastName: answer.lastName,
+    //   email: answer.email,
+    //   userName: answer.userName,
+    //   password: answer.password
+    // }).then(function(dbUser) {
+    //   console.log(dbUser);
+    // });
   });
 
   app.get("/api/user", (req, res) => {
