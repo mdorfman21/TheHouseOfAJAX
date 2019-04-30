@@ -1,28 +1,41 @@
 body {
   background-color: white;
+  overflow-x: hidden;
 }
 
 #bkgvid {
-  position: relative;
-  top: -50;
-  right: 0;
-  bottom: 0;
+  position: center relative;
+  margin-top: -140px;
   min-width: 100%;
-  min-height: 100%;
+  min-height: 500px;
   filter: grayscale(60%) blur(1px);
+}
+
+h1 {
+  font-family: "Quicksand", sans-serif;
+  text-shadow: 1px 1px 4px #2a90ba;
+}
+
+.container {
+  min-height: 500px;
 }
 
 button:hover {
   color: white !important;
 }
 
-span {
+.navqueue,
+.queue {
   font-family: "Anton", sans-serif;
+  color: #2a90ba;
+  text-shadow: none;
+  /* text-shadow: 2px 2px 15px #2a90ba;
+  color: black; */
 }
-span:hover {
+.navqueue:hover {
   font-family: "Anton", sans-serif;
   color: black !important;
-  text-shadow: 2px 2px 4px white;
+  text-shadow: 2px 2px 15px whitesmoke;
 }
 
 .btn {
@@ -39,18 +52,43 @@ span:hover {
   letter-spacing: 1px;
   outline: none;
   position: relative;
+  background-color: none;
 }
 .btn:hover {
   font-family: "Anton", sans-serif;
-  color: green !important;
+  color: #2a90ba !important;
+  background-color: white;
+  text-decoration: underline;
 }
 
 .navbar {
   position: sticky top;
+  background-color: transparent;
   transition: background-color 1s ease-in-out;
 }
 
-nav.scroll {
+nav.navbar {
   position: sticky top;
   transition: background-color 1s ease-in-out;
+}
+.container {
+  position: relative;
+}
+
+.fa-star,
+.fa-star-half {
+  color: goldenrod;
+}
+i,
+p {
+  font-size: 2vw;
+}
+h4 {
+  font-size: 3vw;
+}
+
+.reviews {
+  background-color: transparent;
+}
+
 }

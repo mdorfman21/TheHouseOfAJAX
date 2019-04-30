@@ -16,7 +16,7 @@
       crossorigin="anonymous"
     ></script>
     <link
-      href="https://fonts.googleapis.com/css?family=Anton|Orbitron"
+      href="https://fonts.googleapis.com/css?family=Anton|Orbitron|Quicksand"
       rel="stylesheet"
     />
     <link
@@ -25,13 +25,14 @@
       integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
       crossorigin="anonymous"
     />
+
     <link rel="stylesheet" type="text/css" href="../css/splash.css" />
     <title>Q-App</title>
   </head>
 
   <body>
     <nav id="navibar" class="navbar sticky-top navbar-light bg-transparent">
-      <a class="navbar-brand text-success" href="#">
+      <a class="navbar-brand" href="#">
         <img
           src="../media/logo.png"
           width="50"
@@ -39,8 +40,9 @@
           class="d-inline-block align-center"
           alt="Logo"
         />
-        <span>Queue</span>
+        <span class="navqueue">QUEUE</span>
       </a>
+
       <form class="form-inline">
         <button class="btn btn btn-light mx-2 my-2 my-sm-0" type="submit">
           About
@@ -54,7 +56,7 @@
       </form>
     </nav>
     <!-- Background Video -->
-    <div id="bkgvid" class="parallax">
+    <div class="parallax" id="bkgvid">
       <video loop muted autoplay playsinline data-object-fit="cover">
         <source src="../media/linewaiting.mp4" type="video/ogg" />
       </video>
@@ -62,27 +64,203 @@
 
     <br />
     <!-- Page Content -->
-    <div class="container" style="height:500px;font-size:36px">
-      <div class="jumbotron">
-        Section1
+    <div class="container">
+      <div class="row">
+        <div class="col col-lg-12">
+          <h1 class="text-center">What Is <span class="queue">QUEUE</span>?</h1>
+        </div>
       </div>
-    </div>
-    <div class="container" style="height:500px;font-size:36px">
-      <div class="jumbotron">
-        Section 2
+      <div class="row">
+        <div class="col col-lg-12">
+          <div class="jumbotron">
+            <p class="text-center">
+              House of Ajax, a group of people who truly value time. We know
+              that we can't make up for lost hours, so we decided to work on an
+              app that allows others to hold your place in line, like the DMV or
+              the queue at your local coffee spot. Skip the lines, avoid the
+              drama, and save time in your life. How much is your time worth?
+            </p>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="container" style="height:500px;font-size:36px">
-      <div class="jumbotron">
-        Section 3
+
+      <!-- About Services Section -->
+      <div class="row">
+        <div class="col col-lg-12">
+          <h1 class="text-center">Features</h1>
+        </div>
       </div>
-    </div>
+      <div class="row">
+        <div class="col col-lg-3">
+          <img
+            class="img-fluid img-thumbnail border-white"
+            src="../media/human-resources.png"
+          />
+          <p class="text-center">Have someone wait in line for you</p>
+        </div>
+        <div class="col col-lg-3">
+          <img
+            class="img-fluid img-thumbnail border-white"
+            src="../media/destination.png"
+          />
+          <p class="text-center">Insert Description here</p>
+        </div>
+        <div class="col col-lg-3">
+          <img
+            class="img-fluid img-thumbnail border-white"
+            src="../media/shield.png"
+          />
+          <p class="text-center">Insert Description here</p>
+        </div>
+        <div class="col col-lg-3">
+          <img
+            class="img-fluid img-thumbnail border-white"
+            src="../media/statue-of-liberty.png"
+          />
+          <p class="text-center">Insert Description here</p>
+        </div>
+      </div>
+      <br />
+      <div class="row">
+        <div class="col col-lg-12">
+          <h1 class="text-center">Reviews</h1>
+        </div>
+      </div>
+      <!-- Reviews -->
+      <div class="row text-center">
+        <div class="col col-lg-3">
+          <div class="jumbotron text-center reviews">
+            <h4>Sloth O.</h4>
+            <img src="../media/5Profile.png" class="img-fluid">
+            <div class="stars">
+              <i class="fa fa-star" aria-hidden="true"></i>
+              <i class="fa fa-star" aria-hidden="true"></i>
+              <i class="fa fa-star" aria-hidden="true"></i>
+              <i class="fa fa-star" aria-hidden="true"></i>
+              <i class="fa fa-star" aria-hidden="true"></i>
+            </div>
+            <br>
+            <p>"I hate waiting, so I paid someone to wait in line for me. Win-Win, if you ask me!"</p>
+          </div>
+        </div>
+        <div class="col col-lg-3">
+          <div class="jumbotron text-center reviews">
+            <h4>Linda A.</h4>
+            <img src="../media/2Profile.png" class="img-fluid">
+            <div class="stars">
+              <i class="fa fa-star " aria-hidden="true"></i>
+              <i class="fa fa-star" aria-hidden="true"></i>
+              <i class="fa fa-star" aria-hidden="true"></i>
+              <i class="fa fa-star" aria-hidden="true"></i>
+              <i class="fa fa-star" aria-hidden="true"></i>
+            </div>
+            <br>
+            <p>"The best bookmarked site on my phone. I use it religiously!"</p>
+          </div>
+        </div>
+        <div class="col col-lg-3">
+          <div class="jumbotron text-center reviews">
+            <h4>Mark E.</h4>
+            <img src="../media/3Profile.png" class="img-fluid">
+            <div class="stars">
+              <i class="fa fa-star " aria-hidden="true"></i>
+              <i class="fa fa-star" aria-hidden="true"></i>
+              <i class="fa fa-star" aria-hidden="true"></i>
+              <i class="fa fa-star" aria-hidden="true"></i>
+              <i class="fa fa-star" aria-hidden="true"></i>
+            </div>
+            <br>
+            <p>"I Didn't have to wait around for 2 hours on line for the festival."</p>
+          </div>
+        </div>
+        <div class="col col-lg-3">
+          <div class="jumbotron text-center reviews">
+            <h4>Cactus P.</h4>
+            <img src="../media/4Profile.png" class="img-fluid">
+            <div class="stars">
+              <i class="fa fa-star " aria-hidden="true"></i>
+              <i class="fa fa-star" aria-hidden="true"></i>
+              <i class="fa fa-star" aria-hidden="true"></i>
+              <i class="fa fa-star-half" aria-hidden="true"></i>
+            </div>
+            <br>
+            <p>"Great App to use when you don't want to wait in line."</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col col-lg-6">
+          SIGN UP SECTION HERE [ADD A COOL BUTTON]
+        </div>
+
+        <div class="col col-lg-6">
+          <div class="mapouter mx-auto">
+            <div class="gmap_canvas">
+              <iframe width="350" height="350" id="gmap_canvas"
+                src="https://maps.google.com/maps?q=Columbia%20Engineering&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"
+                scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.emojilib.com"></a>
+            </div>
+            <style>
+              .mapouter {
+                position: relative;
+                text-align: right;
+                height: 350px;
+                width: 350px;
+              }
+          
+              .gmap_canvas {
+                overflow: hidden;
+                background: none !important;
+                height: 350px;
+                width: 350px;
+              }
+            </style>
+          </div>
+        </div>
+      </div>
+
+      
+    <footer class="pt-4 my-md-5 pt-md-5 border-top"><div class="row">
+      <div class="col-12 col-md">
+        <img class="mb-2" src="../../assets/brand/bootstrap-solid.svg" alt="" width="24" height="24">
+        <small class="d-block mb-3 text-muted">QUEUE© 2019</small>
+      </div>
+      <div class="col-6 col-md">
+        <h5>Features</h5>
+        <ul class="list-unstyled text-small">
+          <li><a class="text-muted" href="#">Cool stuff</a></li>
+          <li><a class="text-muted" href="#">Random feature</a></li>
+          <li><a class="text-muted" href="#">Team feature</a></li>
+          <li><a class="text-muted" href="#">Stuff for developers</a></li>
+          <li><a class="text-muted" href="#">Another one</a></li>
+          <li><a class="text-muted" href="#">Last time</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md">
+        <h5>Resources</h5>
+        <ul class="list-unstyled text-small">
+          <li><a class="text-muted" href="#">Resource</a></li>
+          <li><a class="text-muted" href="#">Resource name</a></li>
+          <li><a class="text-muted" href="#">Another resource</a></li>
+          <li><a class="text-muted" href="#">Final resource</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md">
+        <h5>About</h5>
+        <ul class="list-unstyled text-small">
+          <li><a class="text-muted" href="#">Team</a></li>
+          <li><a class="text-muted" href="#">Locations</a></li>
+          <li><a class="text-muted" href="#">Privacy</a></li>
+          <li><a class="text-muted" href="#">Terms</a></li>
+        </ul>
+      </div>
+    </div></footer>
 
     <Script>
       window.onscroll = () => { const nav = document.querySelector('#navibar');
-      if (this.scrollY <= 600) nav.className = 'navbar bg-transparent'; else
-      nav.className = 'navbar sticky-top bg-white'; }; if (this.scrollY >= 600)
-      nav.className = 'navbar bg-transparent scroll';
+      if (this.scrollY <= 400) nav.className = 'navbar sticky-top'; else
+      nav.className = 'navbar sticky-top bg-white'; };
     </Script>
   </body>
 </html>
