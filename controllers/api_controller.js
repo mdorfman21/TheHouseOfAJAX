@@ -84,7 +84,8 @@ module.exports = function(app) {
       author: event.author,
       startTime: event.startTime,
       endTime: event.endTime,
-      payRate: event.payRate
+      payRate: event.payRate,
+      date: event.date
     }).then(dbEvent => {
       console.log(dbEvent);
     });

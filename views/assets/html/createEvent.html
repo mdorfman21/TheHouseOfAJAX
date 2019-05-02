@@ -22,7 +22,7 @@
 <div class="col-md-6">
 
         <h1>Create the Event</h1> 
-    <form>
+    <form action="POST"> 
         <div class="form-group">
           <label for="exampleInputEmail1">User Name</label>
           <input type="text" class="form-control" id="userName" />
@@ -61,6 +61,7 @@
           Queue Me
         </button>
       </form>
+      
 </div>
 </div>
 <script>
@@ -77,20 +78,43 @@ $("#createEvent").on("click", function(event) {
       .val();
     var location = $("#location")
       .val();
-    date = $("#date")
+     var date = $("#date")
       .val();
-      startTime = $("#startTime")
+      var startTime = $("#startTime")
       .val();
-      endTime = $("#endTime")
+      var endTime = $("#endTime")
       .val();
-      author = $("#author")
+      var author = $("#author")
       .val();
-      payRate = $("#payRate")
+      var payRate = $("#payRate")
       .val();
-      // alert(userName,name,location)
-    console.log(userName,name,location,date,startTime,endTime,author,payRate);
+
+
+
+    console.log(userName,name,location,startTime,endTime,author,payRate);
     });
-  
+
+
+    $.ajax({
+        
+        url: "/api/events",
+        method: "POST",
+        data: {
+          name,location,startTime,date,endTime,payRate
+        },
+
+        
+        success: function (data) {
+            console.log('Submission was successful.');
+            console.log(data);
+        },
+        error: function (data) {
+            console.log('An error occurred.');
+            console.log("Debug>>"+ data);
+           
+        },
+    });
+
 
 </script>
 </body>
