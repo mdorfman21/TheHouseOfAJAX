@@ -16,7 +16,7 @@
       crossorigin="anonymous"
     ></script>
     <link
-      href="https://fonts.googleapis.com/css?family=Anton|Orbitron|Quicksand"
+      href="https://fonts.googleapis.com/css?family=Anton|Orbitron|Quicksand|Days+One"
       rel="stylesheet"
     />
     <link
@@ -39,6 +39,7 @@
           height="50"
           class="d-inline-block align-center"
           alt="Logo"
+          id="logo"
         />
         <span class="navqueue">QUEUE</span>
       </a>
@@ -56,40 +57,41 @@
       </form>
     </nav>
     <!-- Background Video -->
-    <div class="parallax" id="bkgvid">
-      <video loop muted autoplay playsinline data-object-fit="cover">
-        <source src="../media/linewaiting.mp4" type="video/ogg" />
+    <div id="bkgvid">
+      <video loop muted autoplay playsinline data-object-fit="contain">
+        <source src="../media/linewaiting.mp4" type="video/ogg">
       </video>
     </div>
 
     <br />
     <!-- Page Content -->
     <div class="container">
-      <div class="row">
+      <!-- arrows at bottom of the video -->
+      <div class="continue text-center">
+        <i class="fa fa-angle-double-down fa-2x" aria-hidden="true"></i>
+      </div>
+      <!-- What is queue -->
+      <div class="row whatis">
         <div class="col col-lg-12">
-          <h1 class="text-center">What Is <span class="queue">QUEUE</span>?</h1>
+          <h1 class="text-center">What Is <span class="queue">QUEUE</span> ?</h1>
         </div>
       </div>
+      <br>
       <div class="row">
         <div class="col col-lg-12">
           <div class="jumbotron">
-            <p class="text-center">
-              House of Ajax, a group of people who truly value time. We know
-              that we can't make up for lost hours, so we decided to work on an
-              app that allows others to hold your place in line, like the DMV or
-              the queue at your local coffee spot. Skip the lines, avoid the
-              drama, and save time in your life. How much is your time worth?
-            </p>
+            <p class="text-center">You can't make up for lost hours, so why not have others to hold your place in line? Think places like the DMV or your local coffee spot. Skip the lines, avoid the drama, and save time in your life. How much is your time worth?</p>
           </div>
         </div>
       </div>
 
-      <!-- About Services Section -->
+      <!-- Features Section -->
       <div class="row">
         <div class="col col-lg-12">
           <h1 class="text-center">Features</h1>
         </div>
       </div>
+      <br>
       <div class="row">
         <div class="col col-lg-3">
           <img
@@ -101,23 +103,23 @@
         <div class="col col-lg-3">
           <img
             class="img-fluid img-thumbnail border-white"
-            src="../media/destination.png"
+            src="../media/stopwatch.png"
           />
-          <p class="text-center">Insert Description here</p>
+          <p class="text-center">Make better use of your time?</p>
         </div>
         <div class="col col-lg-3">
           <img
             class="img-fluid img-thumbnail border-white"
             src="../media/shield.png"
           />
-          <p class="text-center">Insert Description here</p>
+          <p class="text-center">Safe & Secure transaction</p>
         </div>
         <div class="col col-lg-3">
           <img
             class="img-fluid img-thumbnail border-white"
             src="../media/statue-of-liberty.png"
           />
-          <p class="text-center">Insert Description here</p>
+          <p class="text-center">New York City, we got you covered!</p>
         </div>
       </div>
       <br />
@@ -140,7 +142,7 @@
               <i class="fa fa-star" aria-hidden="true"></i>
             </div>
             <br>
-            <p>"I hate waiting, so I paid someone to wait in line for me. Win-Win, if you ask me!"</p>
+            <p class="review">"I hate waiting, so I paid someone to wait in line for me. Win-Win, if you ask me!"</p>
           </div>
         </div>
         <div class="col col-lg-3">
@@ -155,7 +157,7 @@
               <i class="fa fa-star" aria-hidden="true"></i>
             </div>
             <br>
-            <p>"The best bookmarked site on my phone. I use it religiously!"</p>
+            <p class="review">"The best bookmarked site on my phone. I use it religiously!"</p>
           </div>
         </div>
         <div class="col col-lg-3">
@@ -170,7 +172,7 @@
               <i class="fa fa-star" aria-hidden="true"></i>
             </div>
             <br>
-            <p>"I Didn't have to wait around for 2 hours on line for the festival."</p>
+            <p class="review">"I Didn't have to wait around for 2 hours on line for the festival."</p>
           </div>
         </div>
         <div class="col col-lg-3">
@@ -184,14 +186,14 @@
               <i class="fa fa-star-half" aria-hidden="true"></i>
             </div>
             <br>
-            <p>"Great App to use when you don't want to wait in line."</p>
+            <p class="review">"Great App to use when you don't want to wait in line."</p>
           </div>
         </div>
       </div>
 
       <div class="row">
-        <div class="col col-lg-6">
-          SIGN UP SECTION HERE [ADD A COOL BUTTON]
+        <div class="col col-lg-6 text-center">
+          <button id="signupbtn">Sign-Up</button>
         </div>
 
         <div class="col col-lg-6">
@@ -258,9 +260,13 @@
     </div></footer>
 
     <Script>
-      window.onscroll = () => { const nav = document.querySelector('#navibar');
-      if (this.scrollY <= 400) nav.className = 'navbar sticky-top'; else
-      nav.className = 'navbar sticky-top bg-white'; };
+      window.onscroll = () => { 
+      
+      const nav = document.querySelector('#navibar');
+      if (this.scrollY <= 250) nav.className = 'navbar sticky-top'; else
+      nav.className = 'navbar sticky-top bg-white';
+      };
+
     </Script>
   </body>
 </html>
