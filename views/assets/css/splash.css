@@ -2,17 +2,33 @@ body {
   background-color: white;
   overflow-x: hidden;
 }
-
-#bkgvid {
-  position: center relative;
-  margin-top: -140px;
-  min-width: 100%;
-  min-height: 500px;
-  filter: grayscale(60%) blur(1px);
+#logo {
+  filter: drop-shadow(-10px 0px 6px white);
+}
+video {
+  transform: scale(1);
+}
+#bkgvid,
+video {
+  position: static;
+  margin-top: -80px;
+  width: 100%;
+  /* filter: grayscale(60%) blur(1px); */
+}
+.continue {
+  margin-top: -150px;
+  margin-bottom: 100px;
+  color: #2a90ba;
+  font-size: 50px;
+}
+div.whatis {
+  text-align: center;
+  /* margin-top: -30px; */
+  margin-bottom: 15px;
 }
 
 h1 {
-  font-family: "Quicksand", sans-serif;
+  font-family: "Days One", sans-serif;
   text-shadow: 1px 1px 4px #2a90ba;
 }
 
@@ -26,14 +42,19 @@ button:hover {
 
 .navqueue,
 .queue {
-  font-family: "Anton", sans-serif;
+  font-family: "Days One", sans-serif;
   color: #2a90ba;
-  text-shadow: none;
+  /* text-shadow: none; */
+  font-size: 25px;
+  text-shadow: 2px 2px 0px black;
   /* text-shadow: 2px 2px 15px #2a90ba;
   color: black; */
 }
+.queue {
+  font-size: 40px;
+}
 .navqueue:hover {
-  font-family: "Anton", sans-serif;
+  font-family: "Days One", sans-serif;
   color: black !important;
   text-shadow: 2px 2px 15px whitesmoke;
 }
@@ -41,7 +62,7 @@ button:hover {
 .btn {
   font-family: "Anton", sans-serif;
   border: none;
-  font-size: inherit;
+  font-size: 20px;
   color: inherit;
   background: none;
   cursor: pointer;
@@ -49,21 +70,38 @@ button:hover {
   display: inline-block;
   /* margin: 15px 30px; */
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
   outline: none;
   position: relative;
   background-color: none;
 }
 .btn:hover {
   font-family: "Anton", sans-serif;
+  border: none;
+  font-size: 20px;
   color: #2a90ba !important;
-  background-color: white;
+  background: none;
+  cursor: pointer;
   text-decoration: underline;
+  /* padding: 25px 80px; */
+  display: inline-block;
+  /* margin: 15px 30px; */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  outline: none;
+  position: relative;
+  background-color: none;
 }
 
 .navbar {
   position: sticky top;
-  background-color: transparent;
+  background-image: linear-gradient(
+    to right,
+    white,
+    transparent,
+    transparent,
+    transparent
+  );
   transition: background-color 1s ease-in-out;
 }
 
@@ -86,9 +124,15 @@ p {
 h4 {
   font-size: 3vw;
 }
-
+/* reviews section */
 .reviews {
   background-color: transparent;
 }
+/* actual review text */
+.review {
+  color: slategrey;
+}
 
+.signupbtn {
+  border: black;
 }
