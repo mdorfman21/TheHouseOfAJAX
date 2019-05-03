@@ -45,8 +45,49 @@
 
     <script>
       $(document).ready(function() {
+        $.ajax({
+          url: "/api/events",
+          method: "GET"
+        }).then(ans => {
+          console.log(ans);
+          ans.forEach(event => {
+            let eventDiv = $("<li>");
+            let title = $("<h2></h2>").text(event.name);
+            let payRate = $("<p></p>").text(`Payrate is $${event.payRate}`);
+            let location = $("<p></p>").text(`Location - ${event.location}`);
+            let time = $("<p></p>").text(
+              `From ${event.startTime} to ${event.endTime}`
+            );
+            let name = $("<p></p>").text(`You're waiting for ${event.author}`);
+            let btn = $('<input type="button" value="Book Me"/>')
+              .addClass("btn btn-secondary bookMe")
+              .attr("id", event.id);
+            let acceptedBtn = $(
+              '<input type="button" value="Booked" disabled/>'
+            ).addClass("btn btn-secondary");
+            eventDiv.append(title, payRate, location, time, name);
+            if (event.isAccepted === true) {
+              eventDiv.append(acceptedBtn);
+            } else {
+              eventDiv.append(btn);
+            }
+            $("#createdEvent").append(eventDiv);
+          });
+          $(".bookMe").on("click", function() {
+            console.log($(this).attr("id"));
+            $.ajax({
+              url: "/api/events/accepted",
+              method: "PUT",
+              data: {
+                acceptedBy: 8,
+                id: $(this).attr("id")
+              }
+            }).then(location.reload());
+          });
+        });
+
         // Don't refresh the page!
-        $("#bookNowDMV").click(function() {
+        $("#bookNowDMV").click(function(e) {
           alert("Booked");
         });
 
