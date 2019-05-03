@@ -133,6 +133,7 @@ h4 {
   color: slategrey;
 }
 
-.signupbtn {
+#signupbtn {
   border: black;
+  background-color: #2a90ba;
 }
