@@ -13,6 +13,7 @@ module.exports = function(app) {
         ]
       },
       defaults: {
+        userName: answer.userName,
         firstName: answer.firstName,
         lastName: answer.lastName,
         email: answer.email,
@@ -25,9 +26,9 @@ module.exports = function(app) {
         })
       );
       if (created === false) {
-        res.redirect(409, "/login");
+        res.redirect("/login");
       }
-      res.redirect(200, "/");
+      res.redirect("/");
     });
   });
 
