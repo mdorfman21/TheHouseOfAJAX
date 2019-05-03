@@ -107,6 +107,7 @@ module.exports = function(app) {
     db.Event.create({
       name: event.name,
       location: event.location,
+      date: event.date,
       author: event.author,
       startTime: event.startTime,
       endTime: event.endTime,
