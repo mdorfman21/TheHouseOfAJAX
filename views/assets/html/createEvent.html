@@ -10,42 +10,112 @@
     integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
     crossorigin="anonymous"
   />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+ 
     <title>Document</title>
 
 <body>
   
 
 <div class="container">
+<div class="col-md-6">
+
         <h1>Create the Event</h1> 
-    <form>
+    <form action="POST"> 
         <div class="form-group">
           <label for="exampleInputEmail1">User Name</label>
           <input type="text" class="form-control" id="userName" />
-          <!-- <small id="emailHelp" class="form-text text-muted"></small> -->
         </div>
         <div class="form-group">
           <label for="exampleInputEmail1">Create the Event</label>
-          <input type="text" class="form-control" id="lastName" />
-          <!-- <small id="emailHelp" class="form-text text-muted"></small> -->
+          <input type="text" class="form-control" id="name" required="required"/>
         </div>
         <div class="form-group">
             <label for="exampleInputEmail1">Location</label>
-            <input type="text" class="form-control" id="location" />
-            <!-- <small id="emailHelp" class="form-text text-muted"></small> -->
+            <input type="text" class="form-control" id="location"required="required" />
           </div>
+          
           <div class="form-group">
-            <label for="exampleInputEmail1">Time</label>
-            <input type="text" class="form-control" id="time" />
-            <!-- <small id="emailHelp" class="form-text text-muted"></small> -->
+                <label for="exampleInputEmail1">Date</label>
+                <input type="text" class="form-control" id="date" required="required"/>
+              </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Start Time</label>
+            <input type="text" class="form-control" id="startTime" required="required"/>
+          </div>
+            <div class="form-group">
+                    <label for="exampleInputEmail1">End Time</label>
+                    <input type="text" class="form-control" id="endTime" required="required"/>
+            </div>
+            <div class="form-group">
+                    <label for="exampleInputEmail1">Author</label>
+                    <input type="text" class="form-control" id="author" required="required"/>
+                  </div>
+                <div class="form-group">
+                        <label for="exampleInputEmail1">Pay Rate</label>
+                        <input type="text" class="form-control" id="payRate" required="required"/>
+                      </div> 
     <br>
         <button class="btn btn-primary" id="createEvent" type="submit">
           Queue Me
         </button>
       </form>
+      
 </div>
+</div>
+<script>
+$("#createEvent").on("click", function(event) {
+    // Don't refresh the page!
+    // alert("clicked");
+    event.preventDefault();
+    // console.log("clicked");
+
+    var userName = $("#userName")
+      .val();
+      
+    var name = $("#name")
+      .val();
+    var location = $("#location")
+      .val();
+     var date = $("#date")
+      .val();
+      var startTime = $("#startTime")
+      .val();
+      var endTime = $("#endTime")
+      .val();
+      var author = $("#author")
+      .val();
+      var payRate = $("#payRate")
+      .val();
 
 
 
+    console.log(userName,name,location,startTime,endTime,author,payRate);
+    });
 
+
+    $.ajax({
+        
+        url: "/api/events",
+        method: "POST",
+        data: {
+          name,location,startTime,date,endTime,payRate
+        },
+
+        
+        success: function (data) {
+            console.log('Submission was successful.');
+            console.log(data);
+        },
+        error: function (data) {
+            console.log('An error occurred.');
+            console.log("Debug>>"+ data);
+           
+        },
+    });
+
+
+</script>
 </body>
 </html>
