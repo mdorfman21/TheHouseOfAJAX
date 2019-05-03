@@ -10,8 +10,7 @@
     integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
     crossorigin="anonymous"
   />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
  
     <title>Document</title>
 
@@ -69,53 +68,44 @@
       
 </div>
 </div>
-
+<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
 <script>
-$("#createEvent").on("click", function(event) {
+$("#createEvent").on("click", function() {
     // Don't refresh the page!
     // alert("clicked");
-    event.preventDefault();
     // console.log("clicked");
 
-    var userName = $("#userName")
-      .val();
-      
-    var name = $("#name")
-      .val();
-    var location = $("#location")
-      .val();
-     var date = $("#date")
-      .val();
-      var startTime = $("#startTime")
-      .val();
-      var endTime = $("#endTime")
-      .val();
-      var author = $("#author")
-      .val();
-      var payRate = $("#payRate")
-      .val();
+    var userName = $("#userName").val();
+    var name = $("#name").val();
+    var location = $("#location").val();
+    var date = $("#date").val();
+    var startTime = $("#startTime").val();
+    var endTime = $("#endTime").val();
+    var author = $("#author").val();
+    var payRate = $("#payRate").val();
 
     console.log(userName,name,location,startTime,endTime,author,payRate);
-    });
-
 
     $.ajax({
         
         url: "/api/events",
         method: "POST",
         data: {
-          name,location,startTime,date,endTime,payRate
+          name:name,
+          location: location,
+          startTime: startTime,
+          date: date,
+          endTime: endTime,
+          payRate: payRate
         },
-        success: function (data) {
-            console.log('Submission was successful.');
-            console.log(data);
-        },
-        error: function (data) {
-            console.log('An error occurred.');
-            console.log("Debug>>"+ data);
-           
-        },
+
+        
+       
     });
+  })
 
 
 </script>
