@@ -134,6 +134,21 @@ h4 {
 }
 
 #signupbtn {
-  border: black;
+  border: solid 2px black;
   background-color: #2a90ba;
+  color: white;
+  text-shadow: 2px 2px 15px black;
+  font-size: 2vw;
+  width: 15vw;
+  height: 5vw;
+  border-radius: 12px;
+}
+#signupbtn:hover {
+  border: solid 2px #2a90ba;
+  background-color: grey;
+  text-shadow: 2px 2px 15px #2a90ba;
+  font-size: 2vw;
+  width: 15vw;
+  height: 5vw;
+  border-radius: 12px;
 }
