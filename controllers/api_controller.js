@@ -13,6 +13,7 @@ module.exports = function(app) {
         ]
       },
       defaults: {
+        userName: answer.userName,
         firstName: answer.firstName,
         lastName: answer.lastName,
         email: answer.email,
@@ -25,21 +26,10 @@ module.exports = function(app) {
         })
       );
       if (created === false) {
-        res.redirect(409, "/login");
+        res.redirect("/login");
       }
-      res.redirect(200, "/");
+      res.redirect("/");
     });
-
-    //need to put this as a result of a promise
-    // db.User.create({
-    //   firstName: answer.firstName,
-    //   lastName: answer.lastName,
-    //   email: answer.email,
-    //   userName: answer.userName,
-    //   password: answer.password
-    // }).then(function(dbUser) {
-    //   console.log(dbUser);
-    // });
   });
 
   app.get("/api/user", (req, res) => {
@@ -65,7 +55,7 @@ module.exports = function(app) {
         }
       }
     ).then(function(dbUser) {
-      console.log(dbUser);
+      res.json(dbUser);
     });
   });
 
@@ -111,7 +101,8 @@ module.exports = function(app) {
       author: event.author,
       startTime: event.startTime,
       endTime: event.endTime,
-      payRate: event.payRate
+      payRate: event.payRate,
+      date: event.date
     }).then(dbEvent => {
       console.log(dbEvent);
     });

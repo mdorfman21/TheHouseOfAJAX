@@ -23,49 +23,55 @@
 
     <h1>Create the Event</h1> 
     <form> 
-        <div class="form-group">
-          <label for="exampleInputEmail1">User Name</label>
-          <input type="text" class="form-control" id="userName" />
-        </div>
-        <div class="form-group">
-          <label for="exampleInputEmail1">Create the Event</label>
-          <input type="text" class="form-control" id="name" required="required"/>
-        </div>
-        <div class="form-group">
-            <label for="exampleInputEmail1">Location</label>
-            <input type="text" class="form-control" id="location"required="required" />
-          </div>
-          
-          <div class="form-group">
-                <label for="exampleInputEmail1">Date</label>
-                <input type="text" class="form-control" id="date" required="required"/>
-              </div>
-          <div class="form-group">
-            <label for="exampleInputEmail1">Start Time</label>
-            <input type="text" class="form-control" id="startTime" required="required"/>
-          </div>
-            <div class="form-group">
-                    <label for="exampleInputEmail1">End Time</label>
-                    <input type="text" class="form-control" id="endTime" required="required"/>
-            </div>
-            <div class="form-group">
-                    <label for="exampleInputEmail1">Author</label>
-                    <input type="text" class="form-control" id="author" required="required"/>
-                  </div>
-                <div class="form-group">
-                        <label for="exampleInputEmail1">Pay Rate</label>
-                        <input type="text" class="form-control" id="payRate" required="required"/>
-                      </div> 
-    <br>
-        <button class="btn btn-primary" id="createEvent" type="submit">
-          Queue Me
-        </button>
-      </form>
+
+<div class="container">
+<div class="col-md-6">
+
+        <h1>Create the Event</h1> 
+    <form action="POST">
+      <div class="form-group">
+        <label for="exampleInputEmail1">User Name</label>
+        <input type="text" class="form-control" id="userName" />
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Create the Event</label>
+        <input type="text" class="form-control" id="name" required="required" />
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Location</label>
+        <input type="text" class="form-control" id="location" required="required" />
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Date</label>
+        <input type="text" class="form-control" id="date" required="required" />
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Start Time</label>
+        <input type="text" class="form-control" id="startTime" required="required" />
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">End Time</label>
+        <input type="text" class="form-control" id="endTime" required="required" />
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Author</label>
+        <input type="text" class="form-control" id="author" required="required" />
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Pay Rate</label>
+        <input type="text" class="form-control" id="payRate" required="required" />
+      </div>
+      <br>
+      <button class="btn btn-primary" id="createEvent" type="submit">
+        Queue Me
+      </button>
+    </form>
       
 </div>
 </div>
-<script type="text" src="../js/createEvent.js"> </script>
-<!-- $("#createEvent").on("click", function(event) {
+
+<script>
+$("#createEvent").on("click", function(event) {
     // Don't refresh the page!
     // alert("clicked");
     event.preventDefault();
@@ -89,9 +95,7 @@
       var payRate = $("#payRate")
       .val();
 
-
-
-    console.log(userName,name,date,location,startTime,endTime,author,payRate);
+    console.log(userName,name,location,startTime,endTime,author,payRate);
     });
 
 
@@ -102,8 +106,6 @@
         data: {
           name,location,startTime,date,endTime,payRate
         },
-
-        
         success: function (data) {
             console.log('Submission was successful.');
             console.log(data);
@@ -114,7 +116,8 @@
            
         },
     });
- -->
 
+
+</script>
 </body>
 </html>
