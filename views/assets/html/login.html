@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>User Sign Up</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="../css/theme.css">
+<!--===============================================================================================-->
+<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+<!--===============================================================================================-->
+
+</head>
+
+<body >
+    <div class="background"></div>
+    <br>
+    <br>
+    <br>
+       <div class="container-login">
+            <div class="wrap-login">
+                <form class="login100-form validate-form">
+                    <span class="login100-form-title p-b-43">
+                        sign up & get in line
+                    </span>
+                    
+                    <div class="first">
+                        <input class="input100" type="first" name="fn" id="firstName">
+                        <span class="focus-input100"></span>
+                        <span class="label-input100">first name</span>
+                    </div>
+
+                    <div class="last">
+                        <input class="input100" type="last" name="ln" id="lastName">
+                        <span class="focus-input100"></span>
+                        <span class="label-input100">last name</span>
+                    </div>
+
+                    <div class="nameuser">
+                        <input class="input100" type="userlogin" name="un" id="userName">
+                        <span class="focus-input100"></span>
+                        <span class="label-input100">user name</span>
+                    </div>
+
+                    <div class="mail" data-validate = "Valid email is required: ex@abc.xyz">
+                        <input class="input100" type="text" name="email" id="emailinput">
+                        <span class="focus-input100"></span>
+                        <span class="label-input100">e-mail</span>
+                    </div>
+                    
+                    
+                    <div class="password" data-validate="Password is required">
+                        <input class="input100" type="password" name="pass" id="password">
+                        <span class="focus-input100"></span>
+                        <span class="label-input100">password</span>
+                    </div>
+
+
+    
+        <div class="container-login100-form-btn">
+                        <button class="login100-form-btn" id="loginbtn">
+                            login
+                        </button>
+                    </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+    <script>$(document).ready(function() {
+        // Getting references to the name input
+        var nameInput = $("#emailinput");
+    
+        // Adding event listeners to the form to create a new object
+        
+        $('#loginbtn').on('click', function(e) {
+            e.preventDefault();
+          // Don't do anything if the name fields hasn't been filled out
+          if (!nameInput.val().trim()) {
+            return;
+          }
+          // Calling the user function and passing in the value of the name input
+          let userEmail = $('#emailinput').val().trim();
+          let userPassword = $('#password').val().trim();
+          let userFirstName = $('#firstName').val().trim();
+          let userLastName = $('#lastName').val().trim();
+          let userName = $('#userName').val().trim();
+    
+          console.log(userEmail,userPassword, userFirstName, userLastName, userName);
+    
+          $.ajax({
+            url: '/api/user',
+            method: 'POST',
+            data: {
+              email: userEmail,
+              password: userPassword
+            }
+          });
+        
+        })
+    })      
+
+      </script>
+
+</body>
+</html>
