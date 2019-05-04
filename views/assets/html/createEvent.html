@@ -64,12 +64,13 @@
 </div>
 </div>
 <script
-  src="https://code.jquery.com/jquery-3.4.1.min.js"
-  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
   crossorigin="anonymous"></script>
 <script>
-$("#createEvent").on("click", function() {
+$("#createEvent").on("click", function(e) {
     // Don't refresh the page!
+e.preventDefault();
     // alert("clicked");
     // console.log("clicked");
 
@@ -96,12 +97,11 @@ $("#createEvent").on("click", function() {
           startTime: startTime,
           date: date,
           endTime: endTime,
-          payRate: payRate
-        },
-
-        
-       
-    });
+          payRate: payRate,
+          author: author
+        }  
+    })
+    .then(window.location.href='/user/events')
   })
 
 

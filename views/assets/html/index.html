@@ -45,15 +45,15 @@
       </a>
 
       <form class="form-inline">
-        <button class="btn btn btn-light mx-2 my-2 my-sm-0" type="submit">
+        <button class="btn btn btn-light mx-2 my-2 my-sm-0" type="submit" id="about">
           About
         </button>
-        <button class="btn btn btn-light mx-2 my-2 my-sm-0" type="submit">
-          Register
-        </button>
-        <button class="btn btn btn-light mx-2 my-2 my-sm-0" type="submit">
+        <a href="/user/events" class="btn btn btn-light mx-2 my-2 my-sm-0" type="submit" id="wait-board">
+          Wait Board
+        </a>
+        <a href="/events/create" class="btn btn btn-light mx-2 my-2 my-sm-0" type="button" role="button">
           Sign In
-        </button>
+        </a>
       </form>
     </nav>
     <!-- Background Video -->
@@ -96,7 +96,7 @@
         <div class="col col-lg-3">
           <img
             class="img-fluid img-thumbnail border-white"
-            src="../media/human-resources.png"
+            src="../media/human_resources.png"
           />
           <p class="text-center">Have someone wait in line for you</p>
         </div>
@@ -259,14 +259,26 @@
       </div>
     </div></footer>
 
-    <Script>
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+
+    <script>
       window.onscroll = () => { 
       
       const nav = document.querySelector('#navibar');
       if (this.scrollY <= 250) nav.className = 'navbar sticky-top'; else
       nav.className = 'navbar sticky-top bg-white';
       };
-
-    </Script>
+    </script>
+    <script>
+      $('#signIn').on('click', function(e) {
+        e.preventDefault();
+        $.get("/events/create", function() {
+          console.log('i hope this works');
+        });
+      });
+    </script>
   </body>
 </html>

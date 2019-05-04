@@ -17,23 +17,20 @@ module.exports = (sequelize, DataTypes) => {
     },
     isAccepted: { type: DataTypes.BOOLEAN, defaultValue: false },
     date: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      validate: { isInt: true }
+      type: DataTypes.STRING,
+      allowNull: false
     },
     acceptedBy: {
       type: DataTypes.STRING,
       validate: { len: [1] }
     },
     startTime: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      validate: { isInt: true }
+      type: DataTypes.STRING,
+      allowNull: false
     },
     endTime: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      validate: { isInt: true }
+      type: DataTypes.STRING,
+      allowNull: false
     },
     author: {
       type: DataTypes.STRING,

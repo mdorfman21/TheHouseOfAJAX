@@ -22,13 +22,13 @@ module.exports = {
         defaultValue: false
       },
       date: {
-        type: Sequelize.INTEGER
+        type: Sequelize.STRING
       },
       startTime: {
-        type: Sequelize.INTEGER
+        type: Sequelize.STRING
       },
       endTime: {
-        type: Sequelize.INTEGER
+        type: Sequelize.STRING
       },
       author: {
         type: Sequelize.STRING

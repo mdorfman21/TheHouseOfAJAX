@@ -103,7 +103,7 @@ module.exports = function(app) {
       payRate: event.payRate,
       date: event.date
     }).then(dbEvent => {
-      console.log(dbEvent);
+      //   res.redirect("/user/events");
     });
   });
 
